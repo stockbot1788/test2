@@ -18,15 +18,15 @@ class MarketPolicyGradientModelBuilder(AbstractModelBuilder):
 			inputs.append(S)
 
             #h = Conv2D(2048, (3, 1), padding="same")(S)
-			h = Conv2D(2048, 3, 1, padding = 'same')(S)
+			h = Conv2D(2048, (3, 1), padding = 'same')(S)
 			h = LeakyReLU(0.001)(h)
-			h = Conv2D(2048, 5, 1, padding = 'same')(S)
+			h = Conv2D(2048, (5, 1), padding = 'same')(S)
 			h = LeakyReLU(0.001)(h)
-			h = Conv2D(2048, 10, 1, padding = 'same')(S)
+			h = Conv2D(2048, (10, 1), padding = 'same')(S)
 			h = LeakyReLU(0.001)(h)
-			h = Conv2D(2048, 20, 1, padding = 'same')(S)
+			h = Conv2D(2048, (20, 1), padding = 'same')(S)
 			h = LeakyReLU(0.001)(h)
-			h = Conv2D(2048, 40, 1, padding = 'same')(S)
+			h = Conv2D(2048, (40, 1), padding = 'same')(S)
 			h = LeakyReLU(0.001)(h)
 
 			h = Flatten()(h)
@@ -34,7 +34,7 @@ class MarketPolicyGradientModelBuilder(AbstractModelBuilder):
 			h = LeakyReLU(0.001)(h)
 			merges.append(h)
 
-			h = Conv2D(2048, 60, 1, padding = 'same')(S)
+			h = Conv2D(2048, (60, 1), padding = 'same')(S)
 			h = LeakyReLU(0.001)(h)
 
 			h = Flatten()(h)
