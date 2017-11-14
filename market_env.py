@@ -30,7 +30,7 @@ class MarketEnv(gym.Env):
 				f = open(fn, "r")
 				for line in f:
 					if line.strip() != "":
-						dt, openPrice, high, low, close, volume = line.strip().split(",")
+						dt, openPrice, high, low, close, adj,volume = line.strip().split(",")
 						try:
 							if dt >= start_date:						
 								high = float(high) if high != "" else float(close)
